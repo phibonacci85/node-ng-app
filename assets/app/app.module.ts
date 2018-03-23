@@ -11,6 +11,7 @@ import { AuthService } from './auth/auth.service';
 import { ErrorComponent } from './errors/error.component';
 import { ErrorService } from './errors/error.service';
 import { MessageModule } from './auth/message.module';
+import { authRouting } from './auth/auth.routing';
 
 @NgModule({
   declarations: [
