@@ -18,7 +18,7 @@ var MessageService = /** @class */ (function () {
         var token = localStorage.getItem('token')
             ? '?token=' + localStorage.getItem('token')
             : '';
-        return this.http.post('https://node-ng-deployment.herokuapp.com/message' + token, body, { headers: headers })
+        return this.http.post('http://nodengdeployment-env.us-east-2.elasticbeanstalk.com/message' + token, body, { headers: headers })
             .map(function (response) {
             var result = response.json();
             var message = new Message(result.obj.content, result.obj.user.firstName, result.obj._id, result.obj.user._id);
@@ -32,7 +32,7 @@ var MessageService = /** @class */ (function () {
     };
     MessageService.prototype.getMessages = function () {
         var _this = this;
-        return this.http.get('https://node-ng-deployment.herokuapp.com/message')
+        return this.http.get('http://nodengdeployment-env.us-east-2.elasticbeanstalk.com/message')
             .map(function (response) {
             var messages = response.json().obj;
             var transformedMessages = [];
@@ -58,7 +58,7 @@ var MessageService = /** @class */ (function () {
         var token = localStorage.getItem('token')
             ? '?token=' + localStorage.getItem('token')
             : '';
-        return this.http.patch('https://node-ng-deployment.herokuapp.com/message/' + message.messageId + token, body, { headers: headers })
+        return this.http.patch('http://nodengdeployment-env.us-east-2.elasticbeanstalk.com/message/' + message.messageId + token, body, { headers: headers })
             .map(function (response) {
             return response.json();
         })
@@ -73,7 +73,7 @@ var MessageService = /** @class */ (function () {
         var token = localStorage.getItem('token')
             ? '?token=' + localStorage.getItem('token')
             : '';
-        return this.http.delete('https://node-ng-deployment.herokuapp.com/message/' + message.messageId + token)
+        return this.http.delete('http://nodengdeployment-env.us-east-2.elasticbeanstalk.com/message/' + message.messageId + token)
             .map(function (response) {
             return response.json();
         })

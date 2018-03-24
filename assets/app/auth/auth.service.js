@@ -14,7 +14,7 @@ var AuthService = /** @class */ (function () {
         var headers = new Headers({
             'Content-Type': 'application/json'
         });
-        return this.http.post('https://node-ng-deployment.herokuapp.com/user', body, { headers: headers })
+        return this.http.post('http://nodengdeployment-env.us-east-2.elasticbeanstalk.com/user', body, { headers: headers })
             .map(function (response) {
             return response.json();
         })
@@ -29,7 +29,7 @@ var AuthService = /** @class */ (function () {
         var headers = new Headers({
             'Content-Type': 'application/json'
         });
-        return this.http.post('https://node-ng-deployment.herokuapp.com/user/signin', body, { headers: headers })
+        return this.http.post('http://nodengdeployment-env.us-east-2.elasticbeanstalk.com/user/signin', body, { headers: headers })
             .map(function (response) {
             return response.json();
         })
